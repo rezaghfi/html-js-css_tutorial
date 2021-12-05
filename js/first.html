@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript first code</title>
+  </head>
+  <body>
+    <h1>Click on Button For See Date</h1>
+    <button onclick="document.getElementById('date').innerHTML = Date()">
+      Click For Date
+    </button>
+    <div id="date"></div>
+    <h1>Click on Button to minus Number</h1>
+    <button onclick="decrease()">Click For decrease</button>
+    <div id="decrease">100</div>
+    <h1>Click On Button For Increase Number</h1>
+    <button onclick="increase()">Click To Increase</button>
+    <div id="increase">100</div>
+    <script>
+      function decrease() {
+        let num = document.getElementById("decrease").innerHTML;
+        num--;
+        document.getElementById("decrease").innerHTML = num;
+      }
+    </script>
+  </body>
+</html>

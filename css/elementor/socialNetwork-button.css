@@ -1,0 +1,36 @@
+/**!! این کد برای آیتم دکمه می باشد با ایجاد یک دکمه در المنتور در قسمت سی اس اس پیشرفته می توان کد زیر را کپی و یک دکمه حرفه ای طراحی کرد */
+selector{
+    overflow: hidden;
+    padding: 70px;
+}
+selector .elementor-icon{
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: -20px 20px 10px rgba(0,0,0,0.4);
+}
+selector .elementor-icon::before{
+    content:'';
+    position: absolute;
+    top:10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #a2a2a2;
+    transition: 0.5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+selector .elementor-icon::after{
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #c7c7c7;
+    transition: 0.5s;
+    transform: rotate(0deg) skewx(-45deg);
+}
+selector .elementor-icon:hover{
+    box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(40px, -40px);
+}
