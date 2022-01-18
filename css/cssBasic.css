@@ -1,5 +1,27 @@
 /* welcome to CSS */
 /* 
 css stands for cascading Style Sheets.
-cascading refers to the way 
 */
+
+/* external css */
+.external {
+  color: rgb(0, 143, 7);
+  background-color: rgb(253, 189, 173);
+}
+
+/* css syntax
+  h1 {color: otange;}
+  selector {property: value; ....}
+*/
+
+/* id and class selector */
+#id1 {
+}
+.class1 {
+}
+/* descendant selectors */
+#id2 .class2 em {
+  color: antiquewhite;
+  background-color: black;
+}
+/* this is a comment css */
