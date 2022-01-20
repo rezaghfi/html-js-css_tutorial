@@ -73,7 +73,11 @@ p.italic{
 p.oblique{
   font-style: oblique;
 }
-/* font wieght */
+/* font wieght = 100-900 valurd ir loighter - bold - bolder*/
 p.light{
   font-weight: lighter;
 }
+/* font-variant small-caps normal and inherit*/
+/* color property specified the color of the text. (#) 6 hexadecimal values and RGB */
+/* text-align property */
+/* vertical-align property */
