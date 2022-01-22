@@ -36,6 +36,22 @@
     <h2>tooltips</h2>
     <p title="this is tooltips">Hover On Me for show my tooltips</p>
 
+    <h2>editable content</h2>
+    <p contenteditable="true">click on me and change me</p>
+
+    <h2>ditrection</h2>
+    <p dir="auto">این متن راست به چپ است</p>
+    <p dir="auto">this content is left to right</p>
+
+    <h2>img tag</h2>
+    <img
+      src="image/logo.png"
+      alt="logo"
+      height="50%"
+      width="100px"
+      border="2px"
+    />
+
     <h2>order list</h2>
     <ol>
       order list for show Primary Colors in RGB
@@ -51,23 +67,45 @@
       <li>Green</li>
     </ul>
 
-    <h2>editable content</h2>
-    <p contenteditable="true">click on me and change me</p>
+    <h2>table</h2>
+    <table align="center" border="2">
+      <tr>
+        <td bgcolor="red">red</td>
+        <td>Green</td>
+        <td>blue</td>
+      </tr>
+      <tr>
+        <td>Yellow</td>
+        <td colspan="2">Orange</td>
+      </tr>
+    </table>
 
-    <h2>ditrection</h2>
-    <p dir="auto">این متن راست به چپ است</p>
-    <p dir="auto">this content is left to right</p>
+    <h2>the a tag</h2>
+    <a href="image/sign.png" target="_blank">show my signature</a>
+    <br />
+    <a href="image/sign.png" download>downlaod my signature</a>
+
+    <h2>types of elements</h2>
+    <h3>block level</h3>
+    <p>h1, form, li, ol, p, pre, table, div, etc</p>
+    <h3>inline elements</h3>
+    <p>b, a, strong, img, input, em, span, etc</p>
+
+    <h2>other type of Elements</h2>
+    <p>APPLET, IFRAME, INS, MAP, OBJECT, SCRIPT</p>
 
     <h2>form</h2>
     <form action="#" method="get">
-      <input type="file" id="file_input" name="file_input" multiple />
+      <input type="text" name="username" /><br />
+      <input type="password" name="password" id="password_id" /> <br />
+      <input type="radio" name="gender" value="male" /> Male
+      <input type="radio" name="gender" value="female" /> Female <br />
+      <textarea name="message" id="message" cols="30" rows="10"></textarea>
+      <input type="file" id="file_input" name="file_input" multiple /><br />
       <input type="submit" />
     </form>
 
-    <h2>image show and download</h2>
-    <a href="image/sign.png">show my signature</a>
-    <br />
-    <!-- download image -->
-    <a href="image/sign.png" download>downlaod my signature</a>
+    <div bgcolor="#000000">e</div>
+
   </body>
 </html>
