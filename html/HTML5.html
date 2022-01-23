@@ -107,10 +107,32 @@
     <li>session storage</li>
     <li>local storage</li>
   </ul>
+
+  <h2>drag and drop</h2>
+  <div
+    id="box"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+    style="border: 1px solid black; width: 700px; height: 700px"
+  ></div>
+
+  <img
+    id="image"
+    src="image/sign.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="150"
+    height="50"
+    alt=""
+  />
+
+  <h2>svg image</h2>
+  <img src="image/logo.svg" alt="" height="300" />
+
   <script>
     localStorage.setItem("key1", "value1");
     // this will print the value
-    alert(localStorage.getItem("key1"));
+    console.log(localStorage.getItem("key1"));
     //remove a value
     localStorage.removeItem("key1");
     // removing all values
@@ -118,6 +140,21 @@
 
     // using html geolocation
     //navigator.geolocation.getCurrentPosition();
-    alert("mycurrentLocation=")
+    console.log("mycurrentLocation=");
+
+    // drag and drop
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
   </script>
 </body>
