@@ -82,11 +82,16 @@
   </footer>
 
   <h2>audio tag</h2>
+  <b>سلطان غم چشم و چراغم مادر</b>
   <audio src="audio/mother1.mp3" controls autoplay loop>
     Audio element not supported by your browser. supported file format: mp3,
     wav, ogg
   </audio>
-
+  <audio controls autoplay loop>
+    <source src="audio/mother2.mp3" type="audio/mp3" />
+    <source src="audio/mother3.mp3" type="audio/mp3" />
+    <source src="audio/mother4.mp3" type="audio/mp3" />
+  </audio>
   <h2>video tag</h2>
   <video
     src="video/film.mp4"
@@ -107,10 +112,29 @@
     <li>session storage</li>
     <li>local storage</li>
   </ul>
+
+  <h2>drag and drop</h2>
+  <div
+    id="box"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+    style="border: 1px solid black; width: 700; height: 300px"
+  ></div>
+
+  <img
+    id="image"
+    src="image/sign.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="100"
+    height="100"
+    alt=""
+  />
+  <!-- !!script -->
   <script>
     localStorage.setItem("key1", "value1");
     // this will print the value
-    alert(localStorage.getItem("key1"));
+    document.write("key 1 -->" + localStorage.getItem("key1"));
     //remove a value
     localStorage.removeItem("key1");
     // removing all values
@@ -118,6 +142,22 @@
 
     // using html geolocation
     //navigator.geolocation.getCurrentPosition();
-    alert("mycurrentLocation=")
+    console.log("mycurrentLocation=");
+
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
   </script>
+  <!-- !!script -->
+  <!--  -->
 </body>
