@@ -8,7 +8,7 @@
 
   <h2>new Elements</h2>
   <p>
-    new Elements are: 1-article 2-aside 3-auidio 4-canvas 5-datalist 6-details
+    new Elements are: 1-article 2-aside 3-audio 4-canvas 5-datalist 6-details
     7-embed 8-footer 9-header 10-nav 11-output 12-progress 13-section 14-video
     15-<b>new form with:</b> data picker, color picker and numeric stepper
     controls. and input field types include email, search and URL. PUT and
@@ -134,6 +134,7 @@
   <h2>svg image</h2>
   <img src="image/logo.svg" alt="" height="300" />
 
+  <!-- !!script -->
   <script>
     localStorage.setItem("key1", "value1");
     // this will print the value
@@ -163,5 +164,58 @@
     }
   </script>
   <!-- !!script -->
-  <!--  -->
+
+  <h2>html 5 forms</h2>
+  <p>
+    <b>html5 added several new input types:</b>:color, date, datatime-local,
+    email, month, number, rangen search, tel, time, url, week
+  </p>
+  <p>
+    <b>new input attributes in html5</b> autofocus, form, formavtion,
+    formactiom, formenctype, formmethod, formnovalodate, formtarget, height and
+    wigth, list, min and max, multiple
+  </p>
+  <form action="#" autocomplete="off">
+    <label for="name">Your name:</label>
+    <input
+      type="text"
+      id="user"
+      name="username"
+      placeholder="enter name:"
+      required
+      autofocus
+    />
+    <br />
+    <label for="color">color:</label>
+    <input type="color" />
+    <br />
+    <label for="search">search:</label>
+    <input type="search" id="mysearch" name="searchitem" />
+
+    <br />
+    <label for="color">color:</label>
+    <input type="text" id="car" list="colors" />
+    <datalist id="colors">
+      <option value="red"></option>
+      <option value="green"></option>
+      <option value="yellow"></option>
+    </datalist>
+    <br />
+    <label for="email">Email:</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      type="email"
+      placeholder="example@example.com"
+    />
+    <br>
+    <label for="url">URL:</label>
+    <input type="url" id="url" name="url" placeholder="www.example.com">
+    <br>
+    <label for="telephone">TelePhone: </label>
+    <input type="tel" id="tel" name="tel" placeholder="555.555.1211">
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
 </body>
