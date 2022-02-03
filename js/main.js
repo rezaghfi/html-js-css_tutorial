@@ -64,3 +64,94 @@ console.log(5 <= 10);
 document.write("<hr><h1>logocal operators:</h1><br>" + "and && ,or || ,not !");
 varable = 10 > 5 ? "10 greater than 5" : "5 smaller than 10";
 document.write("<br>" + varable);
+
+// string operators
+var mystring1 = "I am learning ";
+var mystring2 = "javasctript with sololearn.";
+document.write("<hr> <h1>string opertor:</h1> <br>" + mystring1 + mystring2);
+
+// if statement
+document.write("<hr><h1>if statement</h1><br>");
+var temp1 = 10;
+var temp2 = "10";
+if ((temp1 = temp2)) document.write("temp1 is equal to temp2");
+else if (temp1 < temp2) document.write("temp1 is smaller than temp2");
+else document.write("temp1 is greater than temp2");
+
+// switch statement
+document.write("<hr><h1>switch statement</h2> <br> today is: ");
+var day = 2;
+switch (day) {
+  case 1:
+    document.write("saturday");
+    break;
+  case 2:
+    document.write("sunday");
+    break;
+  case 1:
+    document.write("monday");
+    break;
+  case 1:
+    document.write("tuesday");
+    break;
+  case 1:
+    document.write("wednesday");
+    break;
+  default:
+    document.write("Another day");
+}
+
+// the for loop
+document.write("<hr><h1>for loop</h1><br>");
+for (i = 0; i < 10; i += 2) {
+  document.write(i + "<br>");
+}
+
+//the while looop
+document.write("<hr><h1>while loop</h1><br>");
+var j = 0;
+while (j <= 10) {
+  document.write(j + "<br>");
+  j++;
+}
+
+//the do while loop
+document.write("<hr><h1>do while loop</h1><br>");
+var h = 0;
+do {
+  document.write(h + "<br>");
+  h++;
+} while (h < 0);
+
+//break and continue
+document.write("<hr><h1> the break in loop</h1><br>");
+for (i = 0; i < 10; i++) {
+  if (i == 5) break;
+  document.write(i + "<br>");
+}
+document.write("<hr><h1> the continue in loop</h1><br>");
+for (i = 0; i < 10; i++) {
+  if (i == 5) continue;
+  document.write(i + "<br>");
+}
+
+// calling function
+document.write("<hr><h1>calling function</h1><br>")
+function myFunction(){
+  document.write("ana myFunction function<br>")
+}
+myFunction();
+myFunction();
+
+//function parameters
+function sayHello(name){
+  document.write("Hi, "+ name + "<br>")
+}
+sayHello("reza")
+sayHello("hasan")
+sayHello("narges")
+
+//multiple parameters
+function sayHello(name, age){
+  
+}
