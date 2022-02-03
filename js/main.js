@@ -10,11 +10,25 @@ var firstName = "Reza";
 var lastName = "Gholamalitabar";
 var age = 11;
 var salary = 55755540;
-nationalcode = "4980181120";
+nationalCode = "4980181120";
 var dateOfBrith = new Date();
 dateOfBrith.setHours(12, 45, 23);
 var working = true;
-document.write("<hr><h1>Data Types:</h1><br>" + firstname + " " + lastname);
+document.write(
+  "<hr><h1>Data Types:</h1><br>" +
+    ", firstName:" +
+    firstName +
+    ", lastName:" +
+    lastName +
+    ", Age:" +
+    age +
+    ", Date Of Birthday:" +
+    dateOfBrith +
+    "National Code:" +
+    nationalCode +
+    "Are you working haes? :" +
+    working
+);
 
 // math operators
 x = 10 * 5;
@@ -22,9 +36,7 @@ x = 10 - 9;
 x = 123 / 6;
 x = 56 % 3;
 x = x++; // x = x and then x+1
-document.write("<hr>" + x);
 x = ++x; // x = x+1
-document.write("<hr>" + x);
 x = x--;
 
 // assignment Operators
@@ -49,6 +61,6 @@ console.log(5 < 10);
 console.log(5 <= 10);
 
 // logical operators
-document.write("<hr>" + "logical operators:and && ,or || ,not !");
+document.write("<hr><h1>logocal operators:</h1><br>" + "and && ,or || ,not !");
 varable = 10 > 5 ? "10 greater than 5" : "5 smaller than 10";
-document.write("<hr>" + varable);
+document.write("<br>" + varable);
