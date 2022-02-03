@@ -4,18 +4,17 @@
  */
 console.log("start main javascript");
 // variable
-var x = 100;
-document.write(x);
+var variable = 100;
 // data types: number, strings, arrays
-var num = 11;
-var price = 553.54;
-num2 = 15;
-var firstname = "reza";
-var lastname = "gholamalitabar";
-var isActive = true;
-var isHoliday = false;
-document.write("<hr>" + firstname + " " + lastname);
-document.write("<hr>" + isActive);
+var firstName = "Reza";
+var lastName = "Gholamalitabar";
+var age = 11;
+var salary = 55755540;
+nationalcode = "4980181120";
+var dateOfBrith = new Date();
+dateOfBrith.setHours(12, 45, 23);
+var working = true;
+document.write("<hr><h1>Data Types:</h1><br>" + firstname + " " + lastname);
 
 // math operators
 x = 10 * 5;
@@ -51,5 +50,5 @@ console.log(5 <= 10);
 
 // logical operators
 document.write("<hr>" + "logical operators:and && ,or || ,not !");
-varable = (10 > 5) ? "10 greater than 5" : "5 smaller than 10"
-document.write("<hr>" + varable)
+varable = 10 > 5 ? "10 greater than 5" : "5 smaller than 10";
+document.write("<hr>" + varable);
