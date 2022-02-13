@@ -136,22 +136,35 @@ for (i = 0; i < 10; i++) {
 }
 
 // calling function
-document.write("<hr><h1>calling function</h1><br>")
-function myFunction(){
-  document.write("ana myFunction function<br>")
+document.write("<hr><h1>calling function</h1><br>");
+function myFunction() {
+  document.write("ana myFunction function<br>");
 }
 myFunction();
 myFunction();
 
 //function parameters
-function sayHello(name){
-  document.write("Hi, "+ name + "<br>")
+function sayHello(name) {
+  document.write("Hi " + name + "<br>");
 }
-sayHello("reza")
-sayHello("hasan")
-sayHello("narges")
 
-//multiple parameters
-function sayHello(name, age){
-  
+// multiple parameters and //! can not overloaded function
+function sayHello(name, age) {
+  document.write("Hi " + name + "your age is " + age + "<br>");
 }
+
+sayHello("reza");
+sayHello("hasan");
+sayHello("narges");
+
+//function return 
+// calculatir
+function sum(a , b){return a + b}
+function sub(a, b){return a - b}
+function div(a , b){return a / b}
+function mul(a , b){return a*b}
+a =12 , b = 12
+document.write( a + " + "+b+" = "+sum(a,b)+ "<br>")
+document.write( a + " - "+b+" = "+sub(a,b)+ "<br>")
+document.write( a + " * "+b+" = "+mul(a,b)+ "<br>")
+document.write( a + " / "+b+" = "+div(a,b)+ "<br>")
