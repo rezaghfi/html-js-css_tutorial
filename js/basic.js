@@ -162,9 +162,20 @@ sayHello("narges");
 function sum(a , b){return a + b}
 function sub(a, b){return a - b}
 function div(a , b){return a / b}
-function mul(a , b){return a*b}
+function mul(a , b){return a * b}
 a =12 , b = 12
 document.write( a + " + "+b+" = "+sum(a,b)+ "<br>")
 document.write( a + " - "+b+" = "+sub(a,b)+ "<br>")
 document.write( a + " * "+b+" = "+mul(a,b)+ "<br>")
 document.write( a + " / "+b+" = "+div(a,b)+ "<br>")
+
+// promt
+var name = prompt("enter your name")
+//alert
+var result = confirm("Hello "+name+"\ndo really want to see this page?")
+if(result == true){
+  alert("thanks for visiting ")
+}else{
+  alert("thanks for staying with us ")
+}
+
