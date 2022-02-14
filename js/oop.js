@@ -1,23 +1,20 @@
 // object in javascript
-var person = {
+var Person = {
   // property
   name: "person",
   age: 20,
   favColor: "green",
   height: 190,
-  person: function(){
-   document.write("ana person constructor")
-  },
 };
-var name = person.name;
-var age = person["age"];
+var name = Person.name;
+var age = Person["age"];
 document.write(name + " age is " + age + "<br>");
-
-var object = {
+var Class = {
   property: "property1",
 };
-
-document.write(object.property + " length is: " + object.property.length + "<br>");
-
-var reza = new person()
-document.write(reza.name + " age is " + reza.age + "<br>");
+document.write(
+  Class.property + " length is: " + Class.property.length + "<br>"
+);
+function Human(){
+  var 
+}
