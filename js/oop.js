@@ -6,6 +6,10 @@ var Person = {
   favColor: "green",
   height: 190,
 };
+
+Person.x = function(){
+  document.write("ana aditional method in person object <br>")
+};
 var name = Person.name;
 var age = Person["age"];
 document.write(name + " age is " + age + "<br>");
@@ -15,6 +19,8 @@ var Class = {
 document.write(
   Class.property + " length is: " + Class.property.length + "<br>"
 );
+Person.x()
+//!!constructor
 // object has any instance with constructor
 function Human(name, age, generic, nationalCode) {
   this.name = name;
@@ -38,6 +44,10 @@ document.write(
 );
 reza.eat();
 reza.x();
+reza.rezaFunc = function(){
+  document.write("ana reza additional function")
+};
+reza.rezaFunc()
 var narges = new Human("narges", 25, "female", 2050747918);
 document.write(
   narges.name +
