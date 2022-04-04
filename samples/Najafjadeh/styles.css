@@ -1,0 +1,41 @@
+body {
+  direction: rtl;
+  text-align: justify;
+}
+
+header {
+  border-radius: 6px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: azure;
+}
+
+main {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.parag {
+  background-color: beige;
+  float: left;
+  width: 80%;
+}
+
+aside {
+  float: right;
+  width: 15%;
+  background-color: blueviolet;
+}
+
+footer {
+  clear: both;
+  border-radius: 6px;
+  background-color: gray;
+  color: beige;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+}
+
+header,
+main,
+footer {
+  margin: 0 1.5% 24px 1.5px;
+}

@@ -1,0 +1,42 @@
+/* @import url(http://fonts.googleapis.com/earlyaccess/scheherazade.css); */
+
+body {
+  direction: rtl;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Arabic Typesetting", serif;
+  /* font-family: "scheherazade", serif; */
+  font-size: 18pt;
+}
+table,
+td {
+  border: 1px solid black;
+  align-content: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px 20px 40px;
+}
+td > a {
+  text-decoration: none;
+}
+#topBtn {
+  /* display: none; */
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 60; /* هر چه عدد بزرگتر عنصر به چشم بیننده نزدیکتر است یعنی روی محور زد بالاتر قرار می گیرد */    
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#topBtn:hover {
+  background-color: #555;
+}
