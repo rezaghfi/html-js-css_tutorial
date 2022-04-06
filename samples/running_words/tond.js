@@ -24,7 +24,7 @@ var options = [
 ];
 
 let wordsItem = wordsList.children;
-let resultsItem = resultO.children;
+let optionsItem = resultsList.children;
 
 step = 0;
 var stopWordIndex = 0;
@@ -33,10 +33,8 @@ let resultNumber = 4;
 var resultPlace = 0;
 var runningFlag = true;
 var choosedWord = "";
-var score = document.getElementById("score");
-var point = 0;
+var score = 0;
 var gameSpeed = 1000;
-
 var play = true;
 
 // render all items hidden
@@ -55,16 +53,16 @@ function resultMaker() {
 function stopMaker() {
   stopWordIndex += Math.floor(Math.random() * stop) + 1;
 }
+
 stopMaker();
 
 function userSelect(e) {
   choosedWord = e.innerHTML;
-
   if (choosedWord == words[step - 1]) {
     // alert("true asnwer");
     console.log("won");
 
-    point += 10;
+    score += 10;
     if (gameSpeed > 701) {
       gameSpeed -= 100;
     }
@@ -72,13 +70,11 @@ function userSelect(e) {
     // alert("false asnwer");
     console.log("lose");
 
-    point -= 5;
+    score -= 5;
   }
-  score.innerHTML = point;
+  document.getElementById("score").innerHTML = score;
   runningFlag = true;
-
   play = true;
-
   stopMaker();
 }
 
@@ -86,24 +82,22 @@ function finalRender() {
   if (play == true) {
     if (step == stopWordIndex) {
       runningFlag = false;
-
       play = false;
-
       resultMaker();
       // this for is for fill the result li with one true answer
       for (var i = 0; i < resultNumber; i++) {
         var fakeResult = Math.floor(Math.random() * options.length);
         if (resultPlace == i) {
-          resultsItem[i].innerHTML = words[step - 1];
+          optionsItem[i].innerHTML = words[step - 1];
         } else {
-          resultsItem[i].innerHTML = options[fakeResult];
+          optionsItem[i].innerHTML = options[fakeResult];
         }
       }
-    } else if (runningFlag == true) {
+    } else if (runningFlag == true && step < words.length) {
       if (step > 0) {
         wordsItem[step - 1].className = "hid";
       }
-      wordsItem[step].className = "show lis";
+      wordsItem[step].className = "show border";
       step++;
     }
   } else if (play == false) {
