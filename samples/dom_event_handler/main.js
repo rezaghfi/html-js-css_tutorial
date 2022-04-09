@@ -21,3 +21,7 @@ function demoFunc(){
 document.getElementById("hidden").addEventListener("click",function hidden(){
   document.getElementById("hidden").style.opacity = 0;
 })
+
+btn4.onclick = function(){
+  test.innerHTML = "you are click on / button"
+}
