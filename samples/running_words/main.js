@@ -9,6 +9,16 @@ var words = [
   "حسن",
   "تقی",
   "رضا",
+  "صالحی",
+  "آبی",
+  "قرمز",
+  "سبز",
+  "نارنجی",
+  "بنفش",
+  "صورتی",
+  "کرمی",
+  "سیاه",
+  "سفید",
 ];
 var options = [
   "مریم",
@@ -24,58 +34,74 @@ var options = [
 ];
 
 let wordsItem = wordsList.children;
-let optionsItem = resultsList.children;
+let optionsItem = optionsList.children;
 
 step = 0;
 var stopWordIndex = 0;
-let stop = 3;
+let stopStep = 2;
 let resultNumber = 4;
 var resultPlace = 0;
 var runningFlag = true;
 var choosedWord = "";
 var score = 0;
-var gameSpeed = 1000;
+var gameSpeed = 2000;
 var play = true;
-
+var levelNum = 1
+timer = document.getElementById("time")
 // render all items hidden
 onload = function FistRenderOfList() {
   for (var i = 0; i < words.length; i++) {
     wordsItem[i].innerHTML = words[i];
   }
+  startTimer(300,timer)
 };
 
+
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+  setInterval(function () {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
+}
 // return a random number bewteen 0 to 3 for the palce of true answer
 function resultMaker() {
   resultPlace = Math.floor(Math.random() * resultNumber);
 }
 
-// return a random number for next step of the game (between 1 to 3)
-function stopMaker() {
-  stopWordIndex += Math.floor(Math.random() * stop) + 1;
-}
+// set first step to stop word
+stopWordIndex = stopStep;
 
-stopMaker();
+function optionSelect(e) {
 
-function userSelect(e) {
   choosedWord = e.innerHTML;
   if (choosedWord == words[step - 1]) {
-    // alert("true asnwer");
     console.log("won");
-
     score += 10;
-    if (gameSpeed > 701) {
-      gameSpeed -= 100;
-    }
+    levelNum++
   } else {
-    // alert("false asnwer");
     console.log("lose");
-
     score -= 5;
   }
-  document.getElementById("score").innerHTML = score;
+  document.getElementById("score").innerHTML = "Score = "+score;
+  if (levelNum % 2 == 0){
+    document.getElementById("level").innerHTML = "Level = "+(levelNum/2 +1);
+    if (gameSpeed > 601) {
+      gameSpeed -= 400;
+    }
+  }
   runningFlag = true;
   play = true;
-  stopMaker();
+  stopWordIndex += stopStep
 }
 
 function finalRender() {
