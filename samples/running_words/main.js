@@ -9,16 +9,6 @@ var words = [
   "حسن",
   "تقی",
   "رضا",
-  "صالحی",
-  "آبی",
-  "قرمز",
-  "سبز",
-  "نارنجی",
-  "بنفش",
-  "صورتی",
-  "کرمی",
-  "سیاه",
-  "سفید",
 ];
 var options = [
   "مریم",
@@ -46,31 +36,27 @@ var choosedWord = "";
 var score = 0;
 var gameSpeed = 2000;
 var play = true;
-var levelNum = 1
-timer = document.getElementById("time")
+var levelNum = 1;
+
 // render all items hidden
 onload = function FistRenderOfList() {
   for (var i = 0; i < words.length; i++) {
     wordsItem[i].innerHTML = words[i];
   }
-  startTimer(300,timer)
+  startTimer(2,59)
 };
 
-
-function startTimer(duration, display) {
-  var timer = duration, minutes, seconds;
+function startTimer(minute,sec) {
   setInterval(function () {
-      minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      display.textContent = minutes + ":" + seconds;
-
-      if (--timer < 0) {
-          timer = duration;
+    document.getElementById("time").innerHTML = "0" + minute + " : " + sec;
+    sec--;
+    if (sec == 00) {
+      minute--;
+      sec = 60;
+      if (minute == 0) {
+        minute = 2;
       }
+    }
   }, 1000);
 }
 // return a random number bewteen 0 to 3 for the palce of true answer
@@ -82,26 +68,25 @@ function resultMaker() {
 stopWordIndex = stopStep;
 
 function optionSelect(e) {
-
   choosedWord = e.innerHTML;
   if (choosedWord == words[step - 1]) {
     console.log("won");
     score += 10;
-    levelNum++
+    levelNum++;
   } else {
     console.log("lose");
     score -= 5;
   }
-  document.getElementById("score").innerHTML = "Score = "+score;
-  if (levelNum % 2 == 0){
-    document.getElementById("level").innerHTML = "Level = "+(levelNum/2 +1);
+  document.getElementById("score").innerHTML = score;
+  if (levelNum % 2 == 0) {
+    document.getElementById("level").innerHTML = (levelNum / 2 + 1);
     if (gameSpeed > 601) {
       gameSpeed -= 400;
     }
   }
   runningFlag = true;
   play = true;
-  stopWordIndex += stopStep
+  stopWordIndex += stopStep;
 }
 
 function finalRender() {
