@@ -25,7 +25,6 @@ var options = [
 
 let wordsItem = wordsList.children;
 let optionsItem = optionsList.children;
-
 step = 0;
 var stopWordIndex = 0;
 let stopStep = 2;
@@ -35,33 +34,30 @@ var runningFlag = true;
 var choosedWord = "";
 var score = 0;
 var gameSpeed = 2000;
-var play = true;
 var levelNum = 1;
+var lastWordIndex = 9;
 
 // render all items hidden
 onload = function FistRenderOfList() {
   for (var i = 0; i < words.length; i++) {
     wordsItem[i].innerHTML = words[i];
   }
-  startTimer(2,59)
+  startTimer(0, 59);
 };
 
-function startTimer(minute,sec) {
+function startTimer(minute, sec) {
   setInterval(function () {
-    document.getElementById("time").innerHTML = "0" + minute + " : " + sec;
+    document.getElementById("time").innerHTML = sec + " : " + "0" + minute;
     sec--;
     if (sec == 00) {
+      if (minute == 0) {
+        document.getElementById("time").innerHTML = "00 : ))"
+        return;
+      }
       minute--;
       sec = 60;
-      if (minute == 0) {
-        minute = 2;
-      }
     }
   }, 1000);
-}
-// return a random number bewteen 0 to 3 for the palce of true answer
-function resultMaker() {
-  resultPlace = Math.floor(Math.random() * resultNumber);
 }
 
 // set first step to stop word
@@ -79,23 +75,25 @@ function optionSelect(e) {
   }
   document.getElementById("score").innerHTML = score;
   if (levelNum % 2 == 0) {
-    document.getElementById("level").innerHTML = (levelNum / 2 + 1);
+    document.getElementById("level").innerHTML = levelNum / 2 + 1;
     if (gameSpeed > 601) {
       gameSpeed -= 400;
     }
   }
+  // the flag that running word in finalRender function
   runningFlag = true;
-  play = true;
   stopWordIndex += stopStep;
+  // hide optionItem after select answer
+  for (i = 0; i < optionsItem.length; i++) {
+    optionsItem[i].innerHTML = "";
+  }
 }
 
 function finalRender() {
-  if (play == true) {
+  if (runningFlag == true) {
     if (step == stopWordIndex) {
-      runningFlag = false;
-      play = false;
-      resultMaker();
-      // this for is for fill the result li with one true answer
+      // this for is for fill the result with one true answer an fake answer in another
+      resultPlace = Math.floor(Math.random() * resultNumber);
       for (var i = 0; i < resultNumber; i++) {
         var fakeResult = Math.floor(Math.random() * options.length);
         if (resultPlace == i) {
@@ -104,14 +102,22 @@ function finalRender() {
           optionsItem[i].innerHTML = options[fakeResult];
         }
       }
-    } else if (runningFlag == true && step < words.length) {
+      //stop running words then you click on options
+      runningFlag = false;
+    } else if (step < words.length) {
       if (step > 0) {
         wordsItem[step - 1].className = "hid";
       }
       wordsItem[step].className = "show border";
       step++;
+    } else {
+      step = 0;
+      wordsItem[step].className = "show border";
+      wordsItem[words.length-1].className = "hid";
+      stopWordIndex = stopStep;
+      console.log(runningFlag);
     }
-  } else if (play == false) {
+  } else{
     console.log("noooo");
     wordsItem[step - 1].className = "hid";
   }
