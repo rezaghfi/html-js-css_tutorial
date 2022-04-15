@@ -28,10 +28,7 @@ let optionsItem = optionsList.children;
 step = 0;
 var stopWordIndex = 0;
 let stopStep = 2;
-let resultNumber = 4;
-var resultPlace = 0;
 var runningFlag = true;
-var choosedWord = "";
 var score = 0;
 var gameSpeed = 2000;
 var levelNum = 1;
@@ -51,7 +48,6 @@ function startTimer(minute, sec) {
     sec--;
     if (sec == 00) {
       if (minute == 0) {
-        document.getElementById("time").innerHTML = "00 : ))"
         return;
       }
       minute--;
@@ -64,18 +60,20 @@ function startTimer(minute, sec) {
 stopWordIndex = stopStep;
 
 function optionSelect(e) {
-  choosedWord = e.innerHTML;
+  var choosedWord = e.innerHTML;
   if (choosedWord == words[step - 1]) {
-    console.log("won");
+    result.innerHTML = "answer is correct";
+    result.style.color = "green";
     score += 10;
     levelNum++;
   } else {
-    console.log("lose");
+    result.innerHTML = "answer is wrong";
+    result.style.color = "red";
     score -= 5;
   }
-  document.getElementById("score").innerHTML = score;
+  score.innerHTML = score;
   if (levelNum % 2 == 0) {
-    document.getElementById("level").innerHTML = levelNum / 2 + 1;
+    level.innerHTML = levelNum / 2 + 1;
     if (gameSpeed > 601) {
       gameSpeed -= 400;
     }
@@ -85,11 +83,14 @@ function optionSelect(e) {
   stopWordIndex += stopStep;
   // hide optionItem after select answer
   for (i = 0; i < optionsItem.length; i++) {
-    optionsItem[i].innerHTML = "";
+    optionsItem[i].className = "hid";
   }
 }
 
 function finalRender() {
+  let resultNumber = 4;
+  var resultPlace = 0;
+  result.innerHTML = "";
   if (runningFlag == true) {
     if (step == stopWordIndex) {
       // this for is for fill the result with one true answer an fake answer in another
@@ -101,6 +102,7 @@ function finalRender() {
         } else {
           optionsItem[i].innerHTML = options[fakeResult];
         }
+        optionsItem[i].className = "show";
       }
       //stop running words then you click on options
       runningFlag = false;
@@ -113,14 +115,13 @@ function finalRender() {
     } else {
       step = 0;
       wordsItem[step].className = "show border";
-      wordsItem[words.length-1].className = "hid";
+      wordsItem[words.length - 1].className = "hid";
       stopWordIndex = stopStep;
-      console.log(runningFlag);
     }
-  } else{
-    console.log("noooo");
+  } else {
+    // runnungFlag is false and you can't do it
     wordsItem[step - 1].className = "hid";
   }
 }
-
-setInterval(finalRender, gameSpeed);
+console.log(gameSpeed);
+const mainInterval = setInterval(finalRender, gameSpeed);

@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Running Word</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>بازی کلمات در حال حرکت</h1>
+      <h1>بازی کلمات در حال حرکت</h1>
     </header>
     <div class="container">
-        <div class="details">
-            <p>زمان = <span id="time">00 : 00</span></p>
-            <p>امتیاز = <span id="score">0</span></p>
-            <p>سطح = <span id="level">1</span></p>
+      <div class="details">
+        <p>زمان = <span id="time">00 : 00</span></p>
+        <p>امتیاز = <span id="score">0</span></p>
+        <p>سطح = <span id="level">1</span></p>
+      </div>
+      <div id="main">
+        <div class="result" id="result"></div>
+        <div class="wordsList" id="wordsList">
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
+          <p class="hid"></p>
         </div>
-        <div id="main">
-            <div class="wordsList" id="wordsList">
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-                <p class="hid"></p>
-            </div>
 
-            <div class="optionsList" id="optionsList">
-                <button onclick="optionSelect(this)"></button>
-                <button onclick="optionSelect(this)"></button>
-                <button onclick="optionSelect(this)"></button>
-                <button onclick="optionSelect(this)"></button>
-            </div>
+        <div class="optionsList" id="optionsList">
+          <button onclick="optionSelect(this)" class="hid"></button>
+          <button onclick="optionSelect(this)" class="hid"></button>
+          <button onclick="optionSelect(this)" class="hid"></button>
+          <button onclick="optionSelect(this)" class="hid"></button>
         </div>
+      </div>
     </div>
     <footer>
-        <i>این یک نمونه اولیه بازی های تندخوانی است.</i>
+      <i>این یک نمونه اولیه بازی های تندخوانی است.</i>
     </footer>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
