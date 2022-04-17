@@ -1,0 +1,100 @@
+.outerContainer{
+    min-height: 110vh;
+    background-color: #000000f2;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.headerGame{
+    font-family: IRANSans;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #1ed2ca5e;
+}
+
+.headerGame >div{
+    text-align: center;
+    flex-basis: 33%;
+}
+.headerGame >div .iconify{
+    vertical-align: middle;
+    font-size: x-large;
+    color: rgb(117, 117, 117);
+}
+.headerGame > .time{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+
+main{
+ margin-top: 4em;
+}
+.gamePlayGround{
+    width: 85%;
+    margin: auto;
+}
+.lineContainer{
+    position: relative;
+    margin-top: 50px;
+}
+
+.word{
+    font-family: IRANSans;
+    color: #84c538;
+    position: absolute;
+    margin: 0;
+    bottom: 100%;
+    left: 0;
+}
+
+
+
+
+
+
+
+#startGame{
+   justify-content: center !important;
+}
+
+#userStatus{
+    font-family: Vazir;
+    text-align: center;
+    color: bisque;
+}
+.gameBTNContainer{
+    align-items: center;
+    margin-top: 150px;
+    justify-content: space-between;
+    width: 85%;
+    margin: 6em auto 0 auto;
+    flex-wrap: wrap;
+}
+.gameBTNSTARTContainer{
+    align-items: center;
+    margin-top: 150px;
+    justify-content: space-between;
+    width: 85%;
+    margin: 6em auto 0 auto;
+    flex-wrap: wrap;
+}
+.gameBTNSTARTContainer>button{
+    width: 100%;
+    font-family: IRANSans;
+    padding: .4em;
+    cursor: pointer;
+}
+.gameBTNContainer > button{
+    font-family: IRANSans;
+    flex-basis: 30%;
+    color: #000;
+    border: none;
+    background-color: rgb(255 255 255);
+    border-radius: 5px;
+    margin-top: 1em;
+    padding: .4em;
+    cursor: pointer;
+}
