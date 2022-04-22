@@ -1,3 +1,4 @@
+section.innerHTML = "Learning Objects in javasript";
 // object with just one instance in javascript
 var Person = {
   // property

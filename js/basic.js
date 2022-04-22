@@ -1,3 +1,4 @@
+section.innerHTML = "Learning basics in javasript";
 // this is java script
 /**
  * this is main file.

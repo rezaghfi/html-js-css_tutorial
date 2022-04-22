@@ -1,3 +1,4 @@
+section.innerHTML = "Learning DOM in javasript";
 // dom child
 paragh = document.createElement("p")
 paragh.innerHTML = "new appending child to main div"
