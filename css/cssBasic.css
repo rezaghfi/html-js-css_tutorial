@@ -77,6 +77,15 @@ p.oblique{
 p.light{
   font-weight: lighter;
 }
+p.blink{
+  text-decoration: underline;
+}
+p.indent{
+  text-indent: 30px;
+}
+p.shadow{
+  text-shadow: 5px 3px 4px grey;
+}
 /* font-variant small-caps normal and inherit*/
 /* color property specified the color of the text. (#) 6 hexadecimal values and RGB */
 /* text-align property */
