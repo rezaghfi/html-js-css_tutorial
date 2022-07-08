@@ -170,13 +170,23 @@ document.write( a + " - "+b+" = "+sub(a,b)+ "<br>")
 document.write( a + " * "+b+" = "+mul(a,b)+ "<br>")
 document.write( a + " / "+b+" = "+div(a,b)+ "<br>")
 
-// promt
-var name = prompt("enter your name")
-//alert
-var result = confirm("Hello "+name+"\ndo really want to see this page?")
-if(result == true){
-  alert("thanks for visiting ")
-}else{
-  alert("thanks for staying with us ")
-}
+// // promt
+// var name = prompt("enter your name")
+// //alert
+// var result = confirm("Hello "+name+"\ndo really want to see this page?")
+// if(result == true){
+//   alert("thanks for visiting ")
+// }else{
+//   alert("thanks for staying with us ")
+// }
 
+// toString
+
+n1  = 6
+n2 = 32
+
+function binaryshow(n1){
+  n1 = n1.toString(2)
+  console.log(n1)
+}
+binaryshow(n1)
