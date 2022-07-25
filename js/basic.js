@@ -170,13 +170,19 @@ document.write( a + " - "+b+" = "+sub(a,b)+ "<br>")
 document.write( a + " * "+b+" = "+mul(a,b)+ "<br>")
 document.write( a + " / "+b+" = "+div(a,b)+ "<br>")
 
-// promt
-var name = prompt("enter your name")
-//alert
-var result = confirm("Hello "+name+"\ndo really want to see this page?")
-if(result == true){
-  alert("thanks for visiting ")
-}else{
-  alert("thanks for staying with us ")
-}
+// // promt
+// var name = prompt("enter your name")
+// //alert
+// var result = confirm("Hello "+name+"\ndo really want to see this page?")
+// if(result == true){
+//   alert("thanks for visiting ")
+// }else{
+//   alert("thanks for staying with us ")
+// }
 
+// toString func for change number mabna
+// AND , OR , XOR
+const and = (n1 , n2) => n1 & n2;
+const or = (n1 , n2) => n1 | n2;
+const xor = (n1 , n2) => n1 ^ n2;
+console.log(or(7,12));
