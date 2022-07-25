@@ -180,9 +180,22 @@ document.write( a + " / "+b+" = "+div(a,b)+ "<br>")
 //   alert("thanks for staying with us ")
 // }
 
+<<<<<<< HEAD
 // toString func for change number mabna
 // AND , OR , XOR
 const and = (n1 , n2) => n1 & n2;
 const or = (n1 , n2) => n1 | n2;
 const xor = (n1 , n2) => n1 ^ n2;
 console.log(or(7,12));
+=======
+// toString
+
+n1  = 6
+n2 = 32
+
+function binaryshow(n1){
+  n1 = n1.toString(2)
+  console.log(n1)
+}
+binaryshow(n1)
+>>>>>>> 221cf5ddc19fabf4239fc0a5d2d26ddc4cea8bac
