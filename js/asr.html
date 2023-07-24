@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>تبدیل صوت به متن</title>
+  </head>
+  <body>
+    <label>Select file to upload</label>
+    <input type="file" id="inputfile" />
+    <button onclick="processaudio()">convert_audio</button>
+    <script>
+      function processaudio() {
+        fetch("https://api.aipaa.ir/auth/token/", {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          // body: '{ "client_id": "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp", "client_secret": "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ", "grant_type": "client_credentials", "scope": "file_manager text voice image video"}',
+          body: JSON.stringify({
+            client_id: "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp",
+            client_secret: "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ",
+            grant_type: "client_credentials",
+            scope: "file_manager text voice image video",
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            converToText(data.access_token);
+          });
+      }
+      function converToText(auth) {
+        var input = document.getElementById("inputfile");
+        console.log(input.files[0]);
+        var formData = new FormData();
+        formData.append("file", input.files[0]);
+        auth = "Bearer " + auth;
+        for (var pair of formData.entries()){
+          console.log(pair[0]+" ,"+pair[1])
+        }
+        console.log(formData)
+        fetch("https://api.aipaa.ir/api/v1/voice/asr/?asr_mode=ava4", {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            authorization: auth,
+            "Content-Type": "multipart/form-data; boundary=------WebKitFormBoundarymnlxfvjUAeFHMTv5",
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+    </script>
+  </body>
+</html>

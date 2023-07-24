@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Record and save audio</title>
+    <style>
+      audio {
+        display: block;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <audio id="recorder" muted hidden></audio>
+      <div>
+        <button id="start">Record</button>
+        <button id="stop">Stop Recording</button>
+      </div>
+      <audio id="player" controls></audio>
+      <button id="processingaudiobtn" onclick="processaudio()">پردازش صدا</button>
+      <label>Select file to upload</label>
+      <input type="file" />
+      <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+      class VoiceRecorder {
+        constructor() {
+          if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            console.log("getUserMedia supported");
+          } else {
+            console.log("getUserMedia is not supported on your browser!");
+          }
+
+          this.mediaRecorder;
+          this.stream;
+          this.chunks = [];
+          this.isRecording = false;
+
+          this.recorderRef = document.querySelector("#recorder");
+          this.playerRef = document.querySelector("#player");
+          this.startRef = document.querySelector("#start");
+          this.stopRef = document.querySelector("#stop");
+
+          this.startRef.onclick = this.startRecording.bind(this);
+          this.stopRef.onclick = this.stopRecording.bind(this);
+
+          this.constraints = {
+            audio: true,
+            video: false,
+          };
+        }
+
+        handleSuccess(stream) {
+          this.stream = stream;
+          this.stream.oninactive = () => {
+            console.log("Stream ended!");
+          };
+          this.recorderRef.srcObject = this.stream;
+          this.mediaRecorder = new MediaRecorder(this.stream);
+          console.log(this.mediaRecorder);
+          this.mediaRecorder.ondataavailable = this.onMediaRecorderDataAvailable.bind(this);
+          this.mediaRecorder.onstop = this.onMediaRecorderStop.bind(this);
+          this.recorderRef.play();
+          this.mediaRecorder.start();
+        }
+
+        handleError(error) {
+          console.log("navigator.getUserMedia error: ", error);
+        }
+
+        onMediaRecorderDataAvailable(e) {
+          this.chunks.push(e.data);
+        }
+
+        onMediaRecorderStop(e) {
+          const blob = new Blob(this.chunks, { type: "audio/ogg; codecs=opus" });
+          const audioURL = window.URL.createObjectURL(blob);
+          this.playerRef.src = audioURL;
+          this.chunks = [];
+          this.stream.getAudioTracks().forEach((track) => track.stop());
+          this.stream = null;
+          //processaudio(blob);
+        }
+
+        startRecording() {
+          if (this.isRecording) return;
+          this.isRecording = true;
+          this.startRef.innerHTML = "Recording...";
+          this.playerRef.src = "";
+          navigator.mediaDevices.getUserMedia(this.constraints).then(this.handleSuccess.bind(this)).catch(this.handleError.bind(this));
+        }
+
+        stopRecording() {
+          if (!this.isRecording) return;
+          this.isRecording = false;
+          this.startRef.innerHTML = "Record";
+          this.recorderRef.pause();
+          this.mediaRecorder.stop();
+          processaudio();
+        }
+      }
+      window.voiceRecorder = new VoiceRecorder();
+      function processaudio() {
+        fetch("https://api.aipaa.ir/auth/token/", {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          // body: '{ "client_id": "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp", "client_secret": "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ", "grant_type": "client_credentials", "scope": "file_manager text voice image video"}',
+          body: JSON.stringify({
+            client_id: "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp",
+            client_secret: "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ",
+            grant_type: "client_credentials",
+            scope: "file_manager text voice image video",
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            converToText(data.access_token);
+          });
+      }
+      function converToText(auth) {
+        const blob = new Blob([], { type: "audio/ogg" });
+        console.log(blob);
+        var input = document.querySelector('input[type="file"]');
+        console.log(input.files[0]);
+        const form = new FormData();
+        form.append("file", input.files[0]);
+        form.append("delete-file-after-process", "y");
+
+        auth = "Bearer " + auth;
+        var text = document.getElementById("textarea").value;
+        fetch("https://api.aipaa.ir/api/v1/voice/asr/?lang_boost=none&asr_mode=ava3", {
+          method: "POST",
+          headers: {
+            authorization: auth,
+            "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundarycEmKwUKcXr3VWdq5",
+          },
+          body: form,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            text.textContent = JSON.stringify(data, undefined, 2);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

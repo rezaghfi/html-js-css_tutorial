@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/fav.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>صفحه تبدیل صوت به متن</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" />
+
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <img src="img/logo.svg" width="100px" />
+          <a class="navbar-brand" href="https://www.opera24.net/">صفحه اصلی</a>
+          <a class="navbar-brand" href="https://www.opera24.net/">محصولات</a>
+          <a class="navbar-brand" href="https://www.opera24.net/">درباره ما</a>
+          <a class="navbar-brand" href="https://www.opera24.net/">درباره ما</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="jumbotron jumbotron-fluid bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">آنالیز صوت</h1>
+        <p class="lead">در این دموها فقط بخشی از توانمندی‌ها و قابلیت‌های اپرا مورد آزمون قرار می‌گیرد. ما قادریم متناسب با نیاز شما ابزارهای خود را توسعه دهیم</p>
+      </div>
+    </div>
+
+    <section class="py-2">
+      <!-- tabs titles -->
+      <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tts-tab" data-bs-toggle="tab" data-bs-target="#tts-tab-pane" type="button" role="tab" aria-controls="tts-tab-pane" aria-selected="true">تبدیل نوشتار به گفتار</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="asr-tab" data-bs-toggle="tab" data-bs-target="#asr-tab-pane" type="button" role="tab" aria-controls="asr-tab-pane" aria-selected="false">تبدیل گفتار به نوشتار</button>
+        </li>
+      </ul>
+      <!-- tabs contents -->
+      <div class="tab-content" id="myTabContent">
+        <!-- تبدیل نوشتار به گفتار -->
+        <div class="tab-pane fade show active" id="tts-tab-pane" role="tabpanel" aria-labelledby="tts-tab" tabindex="0">
+          <div class="container">
+            <h2 class="text-center py-3">تبدیل نوشتار به گفتار</h2>
+
+            <label for="text-input">متن خود را وارد کنید:</label>
+            <textarea class="form-control" id="text-input" rows="10" placeholder=""></textarea>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-primary my-3" onclick="gaveToken()">پردازش متن</button>
+              <button class="btn btn-primary my-3" onclick="clearText()">حذف متن</button>
+            </div>
+            <audio id="audio-player" src="" controls></audio>
+            <div id="outputspeech">
+              <!-- the output speech will be rendered here -->
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <button id="playbtn" class="btn btn-primary m-3" onclick="playaudio()">پخش فایل</button>
+              <button id="downloadbtn" class="btn btn-primary m-3" onclick="downloadaudio()">بارگیری</button>
+            </div>
+            <div class="accordion my-3" id="accordiontts">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetts" aria-expanded="true" aria-controls="collapsetts">نمایش پاسخ سرور</button>
+                </h2>
+                <div id="collapsetts" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordiontts">
+                  <div class="accordion-body">
+                    <pre dir="ltr" id="outputspeechdetails"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- تبدیل گفتار به نوشتار -->
+        <div class="tab-pane fade" id="asr-tab-pane" role="tabpanel" aria-labelledby="asr-tab" tabindex="0">
+          <div class="container">
+            <h2 class="text-center py-3">تبدیل گفتار به نوشتار</h2>
+
+            <div id="inputspeech">
+              <!-- the input speech will be rendered here -->
+            </div>
+            <div class="d-flex justify-content-center">
+              <button id="recordbtn" class="btn btn-primary m-3">شروع ضبط صدا</button>
+              <button id="playrecordbtn" class="btn btn-primary m-3">پخش صدا</button>
+              <button class="btn btn-primary m-3">بارگیری</button>
+            </div>
+            <label for="text-output">نتیجه:</label>
+            <textarea class="form-control" id="text-output" rows="10" placeholder=""></textarea>
+            <div class="accordion my-3" id="accordiontts">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetts" aria-expanded="true" aria-controls="collapsetts">نمایش پاسخ سرور</button>
+                </h2>
+                <div id="collapsetts" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordiontts">
+                  <div class="accordion-body" id="outputspeechdetails"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">این یک صفحه تستی می باشد.</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- waveform -->
+    <script>
+      function gaveToken() {
+        fetch("https://api.aipaa.ir/auth/token/", {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          // body: '{ "client_id": "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp", "client_secret": "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ", "grant_type": "client_credentials", "scope": "file_manager text voice image video"}',
+          body: JSON.stringify({
+            client_id: "Xo4Mo0uWmetUupUcteuXzrnxenHH2PsjtusaLnUp",
+            client_secret: "nPFjSO2Gp7R3ku9W54axEW5EMRXazxgocCy8ctNj68QESBHQnotz34G54VAQsOZLTzQBU0PCk7clG6twLZNp77lJSjORRlldr8ICcaLelzYbL6m5bXdpAO4WZtSxhhLZ",
+            grant_type: "client_credentials",
+            scope: "file_manager text voice image video",
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            convertToSpeech(data.access_token);
+          });
+      }
+      function convertToSpeech(auth) {
+        auth = "Bearer " + auth;
+        var text = document.getElementById("text-input").value;
+        var detail = document.getElementById("outputspeechdetails");
+        fetch("https://api.aipaa.ir/api/v1/voice/tts/", {
+          method: "POST",
+          headers: {
+            Authorization: auth,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ input_text: text }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            detail.textContent = JSON.stringify(data, undefined, 2);
+            fetch(data.download_link, {
+              method: "GET",
+              headers: {
+                Authorization: auth,
+                "Content-Type": "application/json",
+              },
+            })
+              .then((response) => response.blob())
+              .then((data) => {
+                var blob = new Blob([data], { type: "audio/x-wav" });
+                var blobUrl = URL.createObjectURL(blob);
+                // set audio
+                var audioPlayer = document.getElementById("audio-player");
+                audioPlayer.src = blobUrl;
+              });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+      function clearText() {
+        document.getElementById("text-input").value = "";
+      }
+      function playaudio() {
+        var audio = document.getElementById("audio-player");
+        // Play the audio
+        audio.play();
+      }
+      function downloadaudio() {
+        var audio = document.getElementById("audio-player");
+        var file_path = audio.src;
+        var a = document.createElement("A");
+        a.href = file_path;
+        a.download = file_path.substr(file_path.lastIndexOf("/") + 1);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
+  </body>
+</html>
