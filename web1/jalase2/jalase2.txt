@@ -1,0 +1,4 @@
+# main tags div formatting text a img table 
+# style code in 3 inline internal external
+# color sytem rgb hsl hex number color name
+# size formats px in cm rem em % 
