@@ -1,0 +1,38 @@
+*{
+    direction: rtl;
+}
+.header{
+    background-color: aqua;
+    height: 10vh;
+    text-align: center;
+}
+
+.main{
+    background-color:antiquewhite;
+    /* height: 80vh; */
+}
+
+.footer{
+    text-align: center;
+    background-color: aqua;
+    padding: 4vh;
+}
+.header>ul{
+    margin: 0;
+    padding:1em;
+}
+.header>UL>li, .header>ol>li{
+    /* display: bock; */
+    display: inline;
+    margin: 10px;
+}
+
+.header>ul , .header>ol {
+    display: inline;
+}
+
+.main{
+    /* border: 1px solid red; */
+    text-align: center;
+    margin:10px 5px 10px 5px;
+}

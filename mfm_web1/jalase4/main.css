@@ -1,0 +1,24 @@
+/* external css */
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#paragh{
+    color: red;
+    background-color: blue;
+    font-size: 10rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    
+}
+
+.paragh{
+    margin:100px;
+    padding: 50px;
+    font-size: 10em;
+    border: 1px solid red;
+}
+/* selector : tags , id , class , combine */
+/* selector{attribute:value; attribute:value;}*/
