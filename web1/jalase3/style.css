@@ -1,0 +1,51 @@
+.table1{
+  border: 5px solid;
+}
+
+.div1>p>span{
+  background-color: aqua;
+}
+
+.table2>tbody>tr>td{
+  border: 2px solid red;
+}
+
+/* برای استفاده از یک کلاس که جای دیگر نیز تعریف شده مشکلی ایجاد نمی شود. */
+.bi{
+  font-size: 40px;
+}
+
+.nav>li, ul, a{
+  display: inline;
+}
+
+/* ارث بری در ویژگی های css وجود دارد  */
+.navbar1{
+  background-color: #a8a5a535;
+  /*opacity: 0.1;*/
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /* محور اصلی افقی و محور فرعی عمودی است */
+}
+
+.nav>li{
+  margin: 6px;
+}
+
+.nav{
+  margin:50px;
+}
+
+.in{
+  height: 60px;
+  border: 0;
+
+}
+.out{
+  height: 60px;
+  background-color: rgb(1, 156, 208);
+  color: white;
+  border-radius: 10%;
+  
+}
