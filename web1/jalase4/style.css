@@ -1,0 +1,106 @@
+.nav>li{
+  display: inline;
+}
+
+.nav{
+  width:2px;
+  margin:auto;
+}
+
+.paragh1{
+  margin:auto;
+  width: 10%;
+}
+
+.paragh2{
+  width: 10%;
+  display: block;
+  margin:auto;
+}
+/* *{
+  direction: rtl;
+} */
+/* container 1 */
+.container{
+  height: 200px;
+  background-color: antiquewhite;
+  /* صرفا برای انتخاب---> جهت <--- چیدمان آیتم ها استفاده می شه */
+  flex-direction:row;
+  align-items: center;
+  /* برای شروع  >مکان<-- قرار گرفتن آیتم */
+  justify-content: space-around;
+  display:flex;
+  flex-wrap:wrap;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+.item{
+  border:1px solid black;
+  margin: 10px;
+  padding: 5px;
+  background-color:yellow;
+}
+/* container 2 */
+.c1{
+  display: flex;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: antiquewhite;
+  height: 200px;
+}
+.i1{
+  border:1px solid black;
+  margin: 10px;
+  padding: 5px;
+  background-color:yellow;
+  /* این ویژگی مخصوص ایتم است و اینکه کل محور اصلی رو به ایتم ها اختصاص میده */
+  flex-grow:1;
+}
+
+/* css for flexpractice.html */
+.row1, .row2, .row3, .row4, .row5{
+  display: flex;
+  margin-top: 30px;
+  padding: 2%;
+  background-color: rgb(66, 0, 128);
+}
+
+.s1{
+  border:1px solid black;
+  padding:5%;
+  margin:2%;
+  background-color: yellow;
+  border-radius: 5%;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.row2{
+  justify-content: space-between;
+}
+.s2{
+  border:1px solid black;
+  padding:5%;
+  margin:2%;
+  background-color: yellow;
+  border-radius: 5%;
+  text-align: center;
+}
+
+.row3{
+  justify-content: space-around;
+}
+.s3{
+  border:1px solid black;
+  padding:5%;
+  margin:2%;
+  background-color: yellow;
+  border-radius: 5%;
+  text-align: center;
+}
+
+/* header.html */
+header{
+  width: 90vw;
+  background-color: antiquewhite;
+}
