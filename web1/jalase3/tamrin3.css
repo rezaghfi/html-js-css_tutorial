@@ -1,0 +1,22 @@
+.logo {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.nav > li,
+.nav {
+  display: inline;
+  margin-top: 0;
+}
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  border: 3px solid rgb(33, 99, 95);
+  border-radius: 5px;
+  background-color: rgba(152, 194, 219, 0.582);
+  height: 150px;
+}
