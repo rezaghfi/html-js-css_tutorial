@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
+    <title>form</title>
+  </head>
+  <body>
+    <header>
+      <img src="../image/1.jpg" />
+      <ul>
+        <li>home</li>
+        <li>product</li>
+        <li>about</li>
+      </ul>
+      <!-- یک تگ ورودی خارج از تگ فرم استفاده کردیم -->
+      <label>جستجو</label>
+      <input type="search" />
+    </header>
+    <h1>فرم ثبت نظر</h1>
+    <form class="messageform" action="#">
+      <label>نام:</label>
+      <input
+        type="text"
+        name="firstname"
+        placeholder="نام را وارد کنید"
+        value="رضا"
+      />
+      <br />
+      <br />
+      <label>ایمیل:</label>
+      <input type="email" name="email" class="email" />
+      <br />
+      <br />
+      <label>پیام:</label>
+      <!-- <input type="text"> -->
+      <textarea name="message" id="" cols="30" rows="5"></textarea>
+      <input type="file" />
+      <br />
+      <br />
+      <input type="submit" value="ثبت نظر" />
+    </form>
+
+    <br />
+    <br />
+    <!-- *********************************************** -->
+    <div class="formsection">
+      <h1>فرم ورود</h1>
+      <form class="loginform">
+        <label>نام کاربری</label>
+        <br />
+        <input type="text" />
+        <br />
+        <label for="">رمز عبور</label>
+        <br />
+        <input type="password" />
+        <br />
+        <div class="submit">
+          <input type="submit" value="ورود" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

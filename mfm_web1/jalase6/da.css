@@ -1,0 +1,32 @@
+*{
+    direction: rtl;
+}
+
+table{
+    border: 1px solid red;
+}
+
+th{
+    border-bottom: 1px solid red;
+}
+
+.cs{
+    border-left: 1px solid red;
+    
+}
+
+td{
+    border-bottom: 1px solid red;
+}
+
+tfoot>tr>td{
+    border-bottom: 0px;
+}
+/* این انتخابگر با انتخابگر بالایی عملایک کار انجام می دهند */
+.cf{
+    border-bottom: 0px;
+}
+
+.ch{
+    background-color: aqua;
+}

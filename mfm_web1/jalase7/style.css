@@ -1,0 +1,33 @@
+/* css3 */
+/* شبه کلاس */
+
+
+
+.parag:hover {
+  background-color: aqua;
+}
+
+.parag:hover {
+    background-color: red;
+  }
+
+p{
+    background-color: yellow;
+}
+
+.section2{
+    background: #ccc url("../image/1.jpg") no-repeat fixed;
+    background-color: #ccc;
+    background-image: url("../image/1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 1000px;
+    width: 90%;
+}
+
+
+.section3{
+    width: 20%;
+    background-color: red;
+    margin:auto;
+}

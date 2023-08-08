@@ -1,0 +1,33 @@
+*{
+    direction: rtl;
+}
+
+.email{
+    background-color: aqua;
+}
+.messageform{
+    border: 1px solid red;
+}
+.formsection{
+    text-align: center;
+    
+}
+.loginform{
+    padding: 2vh 5vw 2vh 5vw;
+    text-align: right;
+    border: 1px solid red;
+    margin: 0 20vw 0 20vw;
+}
+
+.submit{
+    text-align: center;
+}
+
+header>ul , header>ul>li{
+    display:inline;
+    margin-left:3%;
+}
+header>img{
+    height: 10%;
+    width: 10%;
+}
