@@ -1,0 +1,16 @@
+.parag{
+  font-size: 0.5rem;
+
+}
+
+.main{
+  background-image: url("../image/1.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (max-width:400px){
+  .main{
+    visibility: hidden;
+  }
+}
