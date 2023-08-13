@@ -1,0 +1,60 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: rezasfont;
+    background-color: aqua;
+}
+
+header{
+    text-align: center;
+    font-size: 5px;
+    line-height: 9px;
+}
+
+@font-face{
+    font-family: rezasfont;
+    src:url('../fonts/kalam.woff')
+}
+
+.pimg{
+    border-radius: 50%;
+    width:10%;
+    height:10%;
+}
+
+.left{
+    border:1px solid white;
+    text-align: center;
+    width: 30vw;
+    float:left;
+    
+}
+
+.right1, .right2, .left{
+    padding: 2%;
+    border:1px solid white;
+    font-size: 9px;
+    line-height: 9px;
+    background-color: #ccc;
+    margin-bottom: 5%;
+}
+
+th{
+    text-align: left;
+    padding-right: 20%;
+}
+
+.left>p, .right>p{
+    font-size: 7px;
+    text-align: left;
+}
+
+.right2{
+    text-align: justify;
+    
+}
+
+.right{
+    width: 50vw;
+    float: right;
+    
+}
