@@ -1,0 +1,30 @@
+.right, .left, .center{
+    width: 25vw;
+    height: 50vh;
+    background-color: aqua;
+    /* margin: 1px; */
+    border: 1px dotted black;
+    text-align: center;
+}
+
+.right{
+    float:right;
+}
+.left{
+
+    float:left;
+}
+
+.center{
+    margin: auto;
+}
+
+.section{
+    border:1px solid green;
+    overflow: auto;
+}
+
+.img1{
+    float: right;
+}
+

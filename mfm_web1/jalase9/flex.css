@@ -1,0 +1,29 @@
+.container{
+  display: flex;
+  /* flex-direction: row-reverse;
+  flex-wrap:wrap; */
+  flex-flow: column wrap-reverse;
+  background-color: green;
+  justify-content: space-around;
+  height: 50vh;
+}
+
+.item{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  padding: 0px;
+  margin: 0px;
+  width: 25%;
+  height: 25%;
+}
+
+.item2{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  padding: 0px;
+  margin: 0px;
+  width: 25%;
+  height: 25%;
+}
