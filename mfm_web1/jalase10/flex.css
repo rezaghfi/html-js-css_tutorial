@@ -1,0 +1,67 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  justify-content: center; /*برای محور اصلی*/
+  align-items: flex-end; ; /*برای محور فرعی*/
+  height: 100vh;
+}
+
+.item{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  
+}
+
+.container2{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: green;
+  justify-content: center; /*برای محور اصلی*/
+  align-content:flex-end;
+  gap: 5px 50px;
+  height: 20vh;
+}
+
+.item2{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  
+}
+
+.container3{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: green;
+  align-items: center;
+  gap: 5px 50px;
+  height: vh;
+}
+
+.item3{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  order:2; /*order defualt*/
+  flex-grow:2;
+  
+}
+
+.item31{
+  text-align: center;
+  border: 1px solid red;
+  background-color: yellow;
+  order: 4; /*عدد کمتر نشان دهنده اولویت بالا تر است.*/
+  flex-grow: 3;
+}
+
+
+*{
+  direction: rtl;
+}
