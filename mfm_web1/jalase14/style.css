@@ -1,0 +1,52 @@
+@import "color";
+/* descendant  */
+nav p{
+  background-color: red;
+}
+
+/* child */
+nav>p{
+  background-color: red;
+}
+
+nav + p {
+  background-color: red;
+}
+
+nav ~ p{
+  background-color: red;
+}
+
+nav {
+  background-color: aqua;
+  padding: 1%;
+  border-radius: 1px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li > p {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+  p{
+    padding: 1%;
+  }
+}
+
+nav{
+  background-color: aqua;
+  padding: 1%;
+  border-radius: 1px;
+}
+
+nav ul{}
+
+nav li{}
+
+nav a{}

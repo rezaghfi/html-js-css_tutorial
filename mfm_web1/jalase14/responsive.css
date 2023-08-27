@@ -1,0 +1,33 @@
+body{
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  height: 20vh;
+  /* flex-basis: 30%; */
+}
+
+
+div{
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+@media(max-width: 900px){
+  
+  .div3{
+    /* visibility: hidden; */
+    display: none;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .div2{
+    /* visibility: hidden; */
+    display: none;
+  }
+}
