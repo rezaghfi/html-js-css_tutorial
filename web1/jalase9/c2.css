@@ -1,0 +1,43 @@
+.container {
+  background-color: lightgray;
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display {
+  width: 100%;
+  background-color: darkGrey;
+  height: 50px;
+  font-size: 48px;
+  
+}
+
+button {
+  padding: 15px;
+  font-size: 26px;
+}
+
+.btn-number {
+  flex: 1 20%;
+  background-color: grey;
+}
+
+.btn-operator {
+  flex: 1 20%;
+  background-color: orange;
+}
+
+.btn-equals {
+  flex-basis: 36%;
+  background-color: rgb(218, 59, 30);
+}
+.btn-point {
+  flex-basis: 64%;
+  background-color: rgb(218, 59, 30);
+}
+.btn-clear {
+  flex: 1 20%;
+  background-color: crimson;
+}

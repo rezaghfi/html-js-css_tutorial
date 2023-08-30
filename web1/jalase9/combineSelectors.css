@@ -1,0 +1,22 @@
+
+div, p{
+  background-color: red;
+}
+
+ /* نسل های بعید تگ دیو که تگ پی هست */
+div p{
+  background-color: red;
+}
+
+ /* فرزندان تگ دیو که تگ پی هست */
+div>p{
+  background-color: red;
+}
+
+div + p {
+  background-color: red;
+}
+
+div ~ p{
+  background-color: red;
+}

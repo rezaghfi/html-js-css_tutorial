@@ -1,0 +1,19 @@
+اول باید یک آرایه دوبعدی در کد جاوا اسکریپت تعریف کنی
+let map = [];
+let row = 3;
+let col = 3;
+let h = 0
+ 
+// Loop to initialize 2D array elements.
+for (let i = 0; i < row; i++) {
+    map[i] = [];
+    for (let j = 0; j < col; j++) {
+        map[i][j] = h++;
+    }
+}
+console.log(map);
+
+turn variable
+array 2D
+یک تابع داری برای اینکه به ازای هر بار کلیل بررسی کنه بازی تموم شد یا نه یعنی سطر ها ستون ها و قطر اصلی و فرعی در این تابعی بررسی می شوند.
+
