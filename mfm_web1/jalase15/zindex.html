@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z index</title>
+  <style>
+    div{
+     
+      width: 10vw;
+      /* position: fixed; */
+
+    }
+    body{
+      display: flex;
+    }
+    .over{
+      height: 10vh;
+      width: 20%;
+      background-color: aqua;
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+  <!-- default z-index == 0 -->
+  <div style="background-color: blue;  height: 50vh; z-index: 1;"></div>
+  <div style="background-color: red; margin-left: -2%;  height: 47vh;"></div>
+  <div style="background-color: green;  margin-left: -2%;  height: 45vh; z-index: -1;"></div>
+  <div style="background-color: yellow; margin-left: -2%;  height: 43vh; z-index: -2;" ></div>
+  <div class="over">
+    <pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores tenetur, nisi rem aliquid modi blanditiis aliquam eius quibusdam, commodi ipsum, velit in placeat! Quas eius nihil ipsam qui veniam. In!</pre>
+    <pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores tenetur, nisi rem aliquid modi blanditiis aliquam eius quibusdam, commodi ipsum, velit in placeat! Quas eius nihil ipsam qui veniam. In!</pre>
+    <pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores tenetur, nisi rem aliquid modi blanditiis aliquam eius quibusdam, commodi ipsum, velit in placeat! Quas eius nihil ipsam qui veniam. In!</pre>
+    <pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores tenetur, nisi rem aliquid modi blanditiis aliquam eius quibusdam, commodi ipsum, velit in placeat! Quas eius nihil ipsam qui veniam. In!</pre>
+    
+  </div>
+</body>
+</html>
