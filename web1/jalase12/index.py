@@ -1,0 +1,2 @@
+def reza():
+  return "re";
