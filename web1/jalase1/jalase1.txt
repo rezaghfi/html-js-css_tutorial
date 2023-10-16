@@ -5,4 +5,10 @@ html css javascript  === frontend
 تمرین یک فرانت و بک اند را توضیح و یک مثال عملی بزنید 
 سرور کلاینت هاست و دامنه 
 
-برای جلسه بعدی vscode , extentions , chrome , git
+برای جلسه بعدی vscode  , chrome , git
+
+اکستنشن هایی که باید نصب بشن
+prettier
+live server
+
+تمرین یک مقاله ساده برای من طراحی کن
