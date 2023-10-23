@@ -1,4 +1,13 @@
+تمرین یک در مورد صفحات ایستا و پویا توضیح بده
+
+تمرین دوم واحدهای اندازه گیری در طراحی وب سایت که شامل 
+px , dp , rem , em , % , vw , vh
+تمرین دو یک گالری عکس برای من درست کن که در هر خط 3 عکس را نمایش دهد.
+
+یک کاربری فیگما ایجاد کن و برای من پیغام ایجاد کن.
+یک توضیح کامل در مورد سایت باید به من بدی
 # main tags div formatting text a img table 
 # style code in 3 inline internal external
 # color sytem rgb hsl hex number color name
 # size formats px in cm rem em % 
+
